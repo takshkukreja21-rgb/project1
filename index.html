@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hi Mr World</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet" />
+    <style>
+      :root { --ink:#151413; --paper:#f4efe7; --gold:#b69254; --line:rgba(244,239,231,.27); }
+      * { box-sizing:border-box; }
+      body { margin:0; background:var(--ink); color:var(--paper); font-family:Manrope, sans-serif; overflow-x:hidden; }
+      .hero { min-height:100vh; position:relative; isolation:isolate; padding:28px clamp(24px,6vw,88px) 40px; display:flex; flex-direction:column; overflow:hidden; }
+      .hero::before { content:""; position:absolute; z-index:-2; inset:0; background:radial-gradient(circle at 75% 35%,rgba(182,146,84,.22),transparent 27%), radial-gradient(circle at 8% 100%,#34302a,transparent 37%),linear-gradient(120deg,#171614,#23201d); }
+      .hero::after { content:""; z-index:-1; position:absolute; width:70vmin; height:70vmin; border:1px solid rgba(182,146,84,.47); border-radius:50%; right:-17vmin; top:13vmin; box-shadow:0 0 0 42px rgba(182,146,84,.035),0 0 0 110px rgba(182,146,84,.025); }
+      nav { display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid var(--line); padding-bottom:19px; }
+      .brand { letter-spacing:.2em; text-transform:uppercase; font-size:11px; font-weight:600; }
+      .nav-link { color:var(--paper); text-decoration:none; font-family:"DM Mono",monospace; text-transform:uppercase; font-size:10px; letter-spacing:.12em; border:1px solid rgba(244,239,231,.45); border-radius:99px; padding:10px 16px; transition:.25s; }
+      .nav-link:hover { background:var(--paper); color:var(--ink); }
+      .content { flex:1; display:grid; grid-template-columns:1fr auto; align-items:center; gap:35px; padding:70px 0 36px; }
+      .eyebrow { color:#d7b77d; font-family:"DM Mono",monospace; font-size:11px; letter-spacing:.17em; text-transform:uppercase; display:flex; align-items:center; gap:12px; }
+      .eyebrow::before { content:""; width:32px; height:1px; background:var(--gold); }
+      h1 { font-family:"Playfair Display",serif; font-size:clamp(68px,12.5vw,184px); font-weight:500; letter-spacing:-.07em; line-height:.78; margin:27px 0 35px -8px; max-width:890px; }
+      h1 em { display:block; color:#d9bc86; font-weight:500; padding-left:clamp(44px,10vw,145px); }
+      .intro { max-width:365px; color:rgba(244,239,231,.7); font-size:15px; line-height:1.8; margin:0 0 34px; }
+      .explore { display:inline-flex; align-items:center; gap:13px; color:var(--paper); text-decoration:none; text-transform:uppercase; letter-spacing:.14em; font-family:"DM Mono",monospace; font-size:10px; }
+      .arrow { width:39px; height:39px; display:grid; place-items:center; border:1px solid var(--gold); border-radius:50%; color:#e2c693; transition:.25s; font-size:18px; }
+      .explore:hover .arrow { background:var(--gold); color:#171614; transform:translateX(5px); }
+      .side-note { writing-mode:vertical-rl; transform:rotate(180deg); font-family:"DM Mono",monospace; color:rgba(244,239,231,.55); font-size:10px; letter-spacing:.14em; text-transform:uppercase; align-self:stretch; display:flex; justify-content:center; gap:18px; }
+      .side-note span { color:var(--gold); }
+      footer { border-top:1px solid var(--line); padding-top:17px; display:flex; justify-content:space-between; font-family:"DM Mono",monospace; font-size:10px; letter-spacing:.11em; text-transform:uppercase; color:rgba(244,239,231,.55); }
+      .stamp { position:absolute; right:clamp(28px,7vw,120px); bottom:clamp(92px,14vh,140px); width:125px; aspect-ratio:1; border:1px solid rgba(182,146,84,.65); border-radius:50%; display:grid; place-items:center; text-align:center; font-family:"DM Mono",monospace; color:#d9bc86; font-size:9px; line-height:1.7; letter-spacing:.14em; text-transform:uppercase; transform:rotate(12deg); }
+      .stamp::before { content:"✦"; display:block; font-size:20px; margin-bottom:4px; }
+      @media (max-width:620px) { .hero { min-height:100svh; } .content { grid-template-columns:1fr; padding-top:76px; } h1 { font-size:clamp(65px,20vw,112px); } .side-note { display:none; } .stamp { width:96px; right:27px; bottom:104px; font-size:7px; } footer { gap:15px; } }
+    </style>
+  </head>
+  <body>
+    <main class="hero">
+      <nav>
+        <div class="brand">Hi Mr World</div>
+        <a class="nav-link" href="#hello">Enter the circle</a>
+      </nav>
+      <section class="content" id="hello">
+        <div>
+          <p class="eyebrow">A warm introduction</p>
+          <h1>Hi, <em>Mr World.</em></h1>
+          <p class="intro">An invitation to slow down, look closer, and discover the extraordinary beauty found in every corner of our shared world.</p>
+          <a class="explore" href="#below">Begin the journey <span class="arrow">→</span></a>
+        </div>
+        <aside class="side-note"><span>01</span> Made for the curious</aside>
+      </section>
+      <div class="stamp">A little wonder<br>for every day</div>
+      <footer id="below"><span>Est. 2026</span><span>Panama · Worldwide</span></footer>
+    </main>
+  </body>
+</html>
